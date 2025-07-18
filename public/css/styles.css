@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Andale Mono';
+  src: url('/fonts/AndaleMono.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: 'Andale Mono', monospace;
+  font-size: 4vw; /* Scales with viewport width */
+  line-height: 1.6;
+  margin: 0;
+  padding: 5vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  flex-direction: column; /* Stack logo and menu vertically on mobile */
+  align-items: center;
+  padding: 2vw 5vw;
+  background-color: #ffffff;
+}
+.logo {
+  max-height: 60px; /* Smaller for mobile */
+  width: auto;
+}
+.menu {
+  margin: 2vw 0;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Vertical menu on mobile */
+  align-items: center;
+}
+.menu li {
+  margin: 1vw 0;
+}
+.menu a {
+  font-family: 'Andale Mono', monospace;
+  font-size: 4vw;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menu a:hover {
+  text-decoration: underline;
+}
+main {
+  padding: 5vw;
+  flex: 1;
+  position: relative;
+}
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+.content-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5vw;
+  border-radius: 3px;
+  max-width: 90vw; /* Responsive width */
+  margin: 0 auto;
+}
+main img {
+  max-width: 40vw; /* Smaller image on mobile */
+  height: auto;
+  margin-bottom: 5vw;
+  border-radius: 3px;
+}
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3vw; /* Smaller for mobile */
+  padding: 2vw 0;
+  background-color: #ffffff;
+}
+.bottom-bar p {
+  margin: 0;
+}
+/* Desktop styles (min-width: 768px) */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 20px;
+  }
+  header {
+    flex-direction: row; /* Horizontal layout for desktop */
+    justify-content: flex-start;
+    padding: 10px 20px;
+  }
+  .logo {
+    max-height: 80px; /* Original size for desktop */
+  }
+  .menu {
+    margin-left: 20px;
+  }
+  .menu ul {
+    flex-direction: row; /* Horizontal menu for desktop */
+  }
+  .menu li {
+    margin-left: 15px;
+    margin-top: 0;
+  }
+  .menu a {
+    font-size: 16px;
+  }
+  main {
+    padding: 20px;
+  }
+  .content-box {
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+  }
+  main img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .bottom-bar {
+    font-size: 10px;
+    padding: 10px 0;
+  }
+}
