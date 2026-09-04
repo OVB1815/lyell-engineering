@@ -1,8 +1,64 @@
 {{ define "main" }}
-<main>
-  <div class="content-box">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+<main class="contact-main">
+  <div class="contact-layout">
+    <section class="contact-details" aria-labelledby="contact-heading">
+      <h1 id="contact-heading">Contact</h1>
+      <figure class="headshot-wrap">
+        <img src="{{ "images/headshot.jpg" | relURL }}" alt="Patrick Lyell, PE" class="headshot" width="280" height="280">
+      </figure>
+      <h2 class="contact-name">Patrick Lyell, PE</h2>
+      <p class="license">Ohio PE E-88650</p>
+      <ul class="contact-list">
+        <li>
+          <span class="label">Phone</span>
+          <a href="tel:+13302408862">(330) 240-8862</a>
+        </li>
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:patrick@lyellengineering.com">patrick@lyellengineering.com</a>
+        </li>
+        <li>
+          <span class="label">Address</span>
+          <address>
+            Lyell Engineering, LLC<br>
+            815 Superior Ave. East, Suite 1618<br>
+            Cleveland, OH 44114
+          </address>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact-form-panel" aria-labelledby="form-heading">
+      <h2 id="form-heading" class="visually-hidden">Send a message</h2>
+      <!-- Placeholder form: submits via mailto until a form backend is connected. -->
+      <form class="contact-form" action="mailto:patrick@lyellengineering.com" method="post" enctype="text/plain">
+        <label>
+          <span>Name</span>
+          <input type="text" name="Name" autocomplete="name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="Email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Project type</span>
+          <select name="Project type" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Structural inspection</option>
+            <option>Design and bid documents</option>
+            <option>Construction management / administration</option>
+            <option>Foundation systems</option>
+            <option>Other / general inquiry</option>
+          </select>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="Message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-solid btn-block">Send message</button>
+        <p class="form-note">Opens your email client to send to patrick@lyellengineering.com. You may also call (330) 240-8862.</p>
+      </form>
+    </section>
   </div>
 </main>
 {{ end }}

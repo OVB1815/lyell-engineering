@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Site.Title }} | {{ .Title }}</title>
-  <link rel="stylesheet" href="/css/styles.css?v={{ now.Unix }}">
+  <meta name="description" content="Lyell Engineering, LLC — licensed structural engineering for Ohio. Inspections, design documents, construction administration, and foundation systems.">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}?v={{ now.Unix }}">
 </head>
-<body>
-  <header>
-    <a href="/">
-      <img src="/images/logo.png" alt="Lyell Engineering Logo" class="logo">
-    </a>
-    <nav class="menu">
-      <ul>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/services/">Services</a></li>
-      </ul>
-    </nav>
+<body class="{{ if .IsHome }}page-home{{ else }}page-{{ .Section }}{{ end }}">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ "/" | relURL }}" aria-label="Lyell Engineering home">
+        <img src="{{ "images/logo.png" | relURL }}" alt="Lyell Engineering LLC" class="logo" width="180" height="75">
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <ul>
+          <li><a href="{{ "/" | relURL }}" class="{{ if .IsHome }}is-active{{ end }}">Home</a></li>
+          <li><a href="{{ "services/" | relURL }}" class="{{ if eq .Section "services" }}is-active{{ end }}">Services</a></li>
+          <li><a href="{{ "contact/" | relURL }}" class="{{ if eq .Section "contact" }}is-active{{ end }}">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-ghost header-cta" href="{{ "contact/" | relURL }}">Get in touch</a>
+    </div>
   </header>
+
   {{ block "main" . }}{{ end }}
-  <div class="bottom-bar">
-    <p>© {{ now.Year }} LYELL ENGINEERING LLC. All rights reserved.</p>
-  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-line">
+        © {{ now.Year }} Lyell Engineering, LLC
+        <span class="sep" aria-hidden="true">·</span>
+        815 Superior Ave. East, Suite 1618, Cleveland, OH 44114
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="tel:+13302408862">(330) 240-8862</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="mailto:patrick@lyellengineering.com">patrick@lyellengineering.com</a>
+      </p>
+      <p class="footer-meta">Patrick Lyell, PE (Ohio PE E-88650)</p>
+    </div>
+  </footer>
 </body>
 </html>
