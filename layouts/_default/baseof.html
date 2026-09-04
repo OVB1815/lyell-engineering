@@ -15,9 +15,9 @@
       </a>
       <nav class="menu" aria-label="Primary">
         <ul>
-          <li><a href="{{ "/" | relURL }}" class="{{ if .IsHome }}is-active{{ end }}">Home</a></li>
-          <li><a href="{{ "services/" | relURL }}" class="{{ if eq .Section "services" }}is-active{{ end }}">Services</a></li>
-          <li><a href="{{ "contact/" | relURL }}" class="{{ if eq .Section "contact" }}is-active{{ end }}">Contact</a></li>
+          <li><a href="{{ "/" | relURL }}" class="{{ if .IsHome }}is-active{{ end }}">HOME</a></li>
+          <li><a href="{{ "services/" | relURL }}" class="{{ if eq .Section "services" }}is-active{{ end }}">SERVICES</a></li>
+          <li><a href="{{ "contact/" | relURL }}" class="{{ if eq .Section "contact" }}is-active{{ end }}">CONTACT</a></li>
         </ul>
       </nav>
       <a class="btn btn-ghost header-cta" href="{{ "contact/" | relURL }}">Get in touch</a>
