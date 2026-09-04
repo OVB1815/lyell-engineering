@@ -1,8 +1,70 @@
 {{ define "main" }}
 <main class="home-main">
-  <div class="content-box">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </div>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Structural solutions, built to last.</h1>
+      <p class="lede">Licensed structural engineering for Ohio — inspections, design documents, and construction administration.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="{{ "services/" | relURL }}">View services</a>
+        <a class="btn btn-ghost" href="{{ "contact/" | relURL }}">Contact Patrick Lyell, PE</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="false">
+      <img src="{{ "images/hero-detail.jpg" | relURL }}" alt="Structural steel beam-to-column moment connection detail drawing" class="hero-blueprint" width="520" height="420">
+    </div>
+  </section>
+
+  <section class="home-services" aria-labelledby="home-services-heading">
+    <h2 id="home-services-heading" class="visually-hidden">Services</h2>
+    <div class="service-grid">
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="#404040" stroke-width="1.75">
+            <rect x="12" y="8" width="20" height="28" rx="2"/>
+            <path d="M16 16h12M16 22h12M16 28h8"/>
+            <circle cx="32" cy="32" r="8"/>
+            <path d="M36.5 36.5L41 41"/>
+          </svg>
+        </div>
+        <h3>Inspections</h3>
+        <p>Thorough assessments of existing structures to identify deficiencies, ensure safety, and support informed decisions.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="#404040" stroke-width="1.75">
+            <rect x="10" y="8" width="28" height="32" rx="2"/>
+            <path d="M16 16h16M16 22h16M16 28h10"/>
+            <path d="M28 28l6 6M34 28l-6 6" opacity="0.0"/>
+            <path d="M14 36h8M14 12h4"/>
+          </svg>
+        </div>
+        <h3>Design &amp; Bid Docs</h3>
+        <p>Code-compliant structural design and construction documents produced with clarity, accuracy, and constructability in mind.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="#404040" stroke-width="1.75">
+            <path d="M14 34h20v4H14z"/>
+            <path d="M16 34l4-10h8l4 10"/>
+            <circle cx="24" cy="16" r="5"/>
+            <path d="M12 20h6M30 20h6"/>
+          </svg>
+        </div>
+        <h3>Construction Admin</h3>
+        <p>Responsive support during construction to help ensure the work is built in accordance with the design intent.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="#404040" stroke-width="1.75">
+            <path d="M8 36h32"/>
+            <path d="M12 36V24l12-10 12 10v12"/>
+            <path d="M20 36V26h8v10"/>
+          </svg>
+        </div>
+        <h3>Foundation Systems</h3>
+        <p>Shallow and deep foundation design tailored to site conditions and performance requirements.</p>
+      </article>
+    </div>
+  </section>
 </main>
 {{ end }}
